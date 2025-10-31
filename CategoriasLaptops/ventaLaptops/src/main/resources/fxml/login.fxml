@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="380.0"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pe.edu.upeu.ventaLaptops.control.LoginController"
+            style="-fx-background-color: linear-gradient(to bottom, #E3F2FD, #90CAF9);">
+
+    <children>
+
+        <Label layoutX="95.0" layoutY="95.0" text="*COMPUTACTUS*"
+               style="-fx-text-fill: #0D47A1;">
+            <font>
+                <Font name="Arial Black" size="22.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="60.0" layoutY="160.0" text="Usuario:" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="usuarioTextField" layoutX="60.0" layoutY="178.0" prefWidth="260.0"
+                   promptText="Ingrese su nombre de usuario" style="-fx-background-radius: 8;"/>
+
+        <Label layoutX="60.0" layoutY="222.0" text="Contraseña:" style="-fx-font-weight: bold;"/>
+        <PasswordField fx:id="clavePasswordField" layoutX="60.0" layoutY="240.0" prefWidth="260.0"
+                       promptText="Ingrese su contraseña" style="-fx-background-radius: 8;"/>
+
+        <Button fx:id="ingresarButton" layoutX="60.0" layoutY="290.0" prefWidth="260.0"
+                onAction="#ingresarAccion" text="Ingresar"
+                style="-fx-background-color: #1565C0; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8;"/>
+
+        <Label fx:id="mensajeLabel" alignment="CENTER" layoutX="26.0" layoutY="335.0"
+               prefWidth="330.0" textFill="RED" style="-fx-font-size: 12px;"/>
+
+        <Button fx:id="salirButton" layoutX="280.0" layoutY="400.0"
+                onAction="#salirAccion" text="Salir"
+                style="-fx-background-color: #E53935; -fx-text-fill: white; -fx-background-radius: 6;"/>
+    </children>
+</AnchorPane>
+

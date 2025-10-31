@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="panelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pe.edu.upeu.ventaLaptops.control.MenuAdminController"
+            style="-fx-background-color: linear-gradient(to bottom, #E3F2FD, #90CAF9);">
+
+    <center>
+        <VBox alignment="CENTER" spacing="30.0" BorderPane.alignment="CENTER">
+            <children>
+                <!-- Título principal -->
+                <Label text="COMPUTACTUS" style="-fx-text-fill: #0D47A1; -fx-font-weight: bold; -fx-font-size: 36px;">
+                    <font>
+                        <Font name="Arial Black" size="36.0" />
+                    </font>
+                </Label>
+
+                <!-- Botón Gestionar Categorías -->
+                <Button onAction="#abrirGestionCategorias"
+                        text="Gestionar Clientes"
+                        prefWidth="250.0"
+                        prefHeight="50.0"
+                        style="-fx-background-color: #1565C0; -fx-text-fill: white; -fx-font-size: 18px; -fx-background-radius: 12px;"/>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </VBox>
+    </center>
+</BorderPane>

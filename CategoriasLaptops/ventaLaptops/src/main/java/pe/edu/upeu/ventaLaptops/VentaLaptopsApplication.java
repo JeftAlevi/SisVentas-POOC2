@@ -1,0 +1,58 @@
+package pe.edu.upeu.ventaLaptops;
+
+import pe.edu.upeu.ventaLaptops.modelo.Usuario;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import org.springframework.boot.WebApplicationType;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
+import pe.edu.upeu.ventaLaptops.utils.Vistas;
+
+@SpringBootApplication
+public class VentaLaptopsApplication extends Application {
+
+    public static Usuario usuarioLogueado;
+    private ConfigurableApplicationContext springContext;
+    private Parent rootNode;
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+
+    @Override
+    public void init() throws Exception {
+        SpringApplicationBuilder builder = new SpringApplicationBuilder(VentaLaptopsApplication.class);
+        builder.application().setWebApplicationType(WebApplicationType.NONE);
+        springContext = builder.run(getParameters().getRaw().toArray(new String[0]));
+
+        // Cargar vista de login
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(Vistas.LOGIN.getRuta()));
+        loader.setControllerFactory(springContext::getBean);
+        rootNode = loader.load();
+
+        // ⚡ Crear usuario ADMIN por defecto (DNI=admin, clave=123)
+        Usuario admin = new Usuario();
+        admin.setDni("admin");
+        admin.setClave("123");
+        admin.setRol(pe.edu.upeu.ventaLaptops.enums.RolUsuario.ADMINISTRADOR);
+
+        // Guardar en variable estática para usar en LoginController
+        VentaLaptopsApplication.usuarioLogueado = admin;
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("Venta de Laptops - Perú");
+        primaryStage.setScene(new Scene(rootNode));
+        primaryStage.show();
+    }
+
+    @Override
+    public void stop() {
+        springContext.close();
+    }
+}
