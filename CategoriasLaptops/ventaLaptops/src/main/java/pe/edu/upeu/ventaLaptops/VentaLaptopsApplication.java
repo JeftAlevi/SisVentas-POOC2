@@ -36,7 +36,7 @@ public class VentaLaptopsApplication extends Application {
 
         // ⚡ Crear usuario ADMIN por defecto (DNI=admin, clave=123)
         Usuario admin = new Usuario();
-        admin.setDni("admin");
+        admin.setDni("alevi");
         admin.setClave("123");
         admin.setRol(pe.edu.upeu.ventaLaptops.enums.RolUsuario.ADMINISTRADOR);
 
