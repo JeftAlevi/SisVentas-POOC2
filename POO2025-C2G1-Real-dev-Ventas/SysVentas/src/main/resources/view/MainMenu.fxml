@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="pe.edu.upeu.sysventas.controller.MenuController"
+            prefHeight="400.0" prefWidth="600.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #2c3e50, #4ca1af);">
+
+    <VBox alignment="CENTER" spacing="20"
+          AnchorPane.topAnchor="50" AnchorPane.bottomAnchor="50"
+          AnchorPane.leftAnchor="50" AnchorPane.rightAnchor="50"
+          style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 30;">
+
+        <Label text="Menú Principal"
+               style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+        <!-- Botón que abre la ventana de Categorías (usada como Registro de Clientes) -->
+        <Button fx:id="btnClientes" text="Registro de Clientes" onAction="#abrirCategorias"
+                style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold;
+                       -fx-font-size: 16px; -fx-background-radius: 10;"
+                maxWidth="250"/>
+
+        <!-- Botón para salir -->
+        <Button fx:id="btnSalir" text="Salir" onAction="#salirSistema"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;
+                       -fx-font-size: 16px; -fx-background-radius: 10;"
+                maxWidth="250"/>
+    </VBox>
+</AnchorPane>

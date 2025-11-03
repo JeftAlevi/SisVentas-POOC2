@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="pe.edu.upeu.sysventas.controller.LoginController"
+            prefHeight="400.0" prefWidth="600.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #2c3e50, #4ca1af);">
+
+    <children>
+        <VBox spacing="15" layoutX="150" layoutY="100" prefWidth="300" prefHeight="200"
+              style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20;">
+
+            <Label text="Inicio de Sesión" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"
+                   alignment="CENTER" maxWidth="Infinity"/>
+
+            <Label text="Usuario:" style="-fx-text-fill: #333;"/>
+            <TextField fx:id="txtUsuario" promptText="Ingrese su usuario"/>
+
+            <Label text="Contraseña:" style="-fx-text-fill: #333;"/>
+            <PasswordField fx:id="txtClave" promptText="Ingrese su contraseña"/>
+
+            <Button text="Ingresar"
+                    style="-fx-background-color: #4ca1af; -fx-text-fill: white; -fx-font-weight: bold;"
+                    onAction="#onLogin"
+                    maxWidth="Infinity"/>
+        </VBox>
+    </children>
+</AnchorPane>

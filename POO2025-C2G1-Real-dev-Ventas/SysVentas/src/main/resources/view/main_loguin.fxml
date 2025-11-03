@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom right, #1f1c2c, #928dab);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.LoginController">
+
+    <children>
+
+        <!-- Fondo decorativo -->
+        <ImageView fitHeight="600.0" fitWidth="800.0" opacity="0.2" preserveRatio="false">
+            <image>
+                <Image url="@/img/fondo.png"/>
+            </image>
+        </ImageView>
+
+        <!-- Tarjeta principal centrada -->
+        <VBox alignment="CENTER" prefHeight="380" prefWidth="300" spacing="15" style="-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 15; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 15, 0, 0, 5);"
+              AnchorPane.topAnchor="110" AnchorPane.leftAnchor="250">
+
+            <!-- Logo -->
+            <ImageView fx:id="imgLogo" fitHeight="80" fitWidth="80">
+                <image>
+                    <Image url="@/img/secrecy-icon.png"/>
+                </image>
+            </ImageView>
+
+            <!-- Título -->
+            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="SysVentas - Laptops" />
+
+            <Separator prefWidth="250" />
+
+            <!-- Usuario -->
+            <VBox prefWidth="250" spacing="5">
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #333;" text="Usuario" />
+                <TextField fx:id="txtUsuario" promptText="Ingrese su usuario" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #2980b9; -fx-padding: 10;" />
+            </VBox>
+
+            <!-- Contraseña -->
+            <VBox prefWidth="250" spacing="5">
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #333;" text="Contraseña" />
+                <PasswordField fx:id="txtClave" promptText="Ingrese su contraseña" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #2980b9; -fx-padding: 10;" />
+            </VBox>
+
+            <!-- Botón de acceso -->
+            <Button fx:id="btnLogin" onAction="#onLogin" prefWidth="200" style="-fx-background-color: linear-gradient(to right, #2980b9, #6dd5fa); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 20; -fx-padding: 10;" text="Iniciar Sesión" />
+
+            <!-- Pie -->
+            <Label style="-fx-text-fill: #888; -fx-font-size: 11px;" text="© 2025 SysVentas - Venta de Laptops" />
+
+        </VBox>
+
+    </children>
+</AnchorPane>
